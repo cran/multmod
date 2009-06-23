@@ -1,0 +1,5 @@
+## Changes in 'multmod'
+
+2009-06-15: The package was created for the first time, only containing a single function: amtest(). 
+2009-06-19: Examples added on the help page for amtest()
+2009-06-23: Data added with help page and examples modified in help page for amtest()
