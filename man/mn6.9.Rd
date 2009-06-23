@@ -13,7 +13,7 @@
     \item{\code{y2}}{Agree=1/disagree=0 to "Scientists and engineers should be eliminated form the military draft"}
     \item{\code{y3}}{Agree=1/disagree=0 to "The scientist will make his maximum contribution to society when he has freedom to work on problems that interest him"}
     \item{\code{y4}}{Agree=1/disagree=0 to "The monetary compensation of a Nobel Prize-winner in physics should be at least equal to that given to popular entertainers"}
-    \item{\code{group}}{I.Q.levels: 1=low, 2=high}
+    \item{\code{group}}{I.Q. levels: 1=low, 2=high}
   }
 }
 

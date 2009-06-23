@@ -14,7 +14,8 @@ Testing multiple outcomes
 }
 
 \usage{
-  amtest(modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, display = TRUE)
+  amtest(modelList, varName, vcov. = c("sandwich", "model-based"), 
+         sig.level = 0.05, display = TRUE)
 }
 
 \arguments{
@@ -50,7 +51,8 @@ Testing multiple outcomes
 }
 
 \value{
-  The corrected significance level as well as the Bonferroni correction and the marginal
+  The corrected significance level as well as the Bonferroni type correction  
+ \eqn{1-(1-Nominal significance level)^(1/Number of tests)} and the marginal
   p-values are shown by default (can be switched off using the argument 'display').
   
   These values are also returned invisibly in a list.
@@ -73,8 +75,8 @@ Testing multiple outcomes
 \examples{
 
 
-##Example from: McCullagh, P. and Nelder, J.A. (1989,p. 239). Generalized Linear Models. Second Edition. 
-##Chapman & Hall/CRC.
+##Example from: McCullagh, P. and Nelder, J.A. (1989,p. 239). Generalized Linear Models. 
+##Second Edition. Chapman & Hall/CRC.
 
 
 model1 <- glm(y1~group, family=binomial,na.action=na.omit,data=mn6.9)

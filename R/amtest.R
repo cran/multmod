@@ -70,7 +70,7 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
 
     ## Calculating asymptotic correction
     asympCorr <- alphacorrected(numModels, sig.level, vcMat)
-    bonCorr <- sig.level / numModels
+    bonCorr <- 1-(1-sig.level)^(1 / numModels)
 
     ## Showing the results 
     if (display)
