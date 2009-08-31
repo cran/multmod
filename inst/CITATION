@@ -5,6 +5,7 @@ entry="Unpublished",
 title = "An asymptotic correction for controlling the overall type I error when testing multiple outcomes",
 author = personList(as.person("C. B. Pipper"), as.person("C. Ritz")),
 year = 2009,
+note = "Submitted manuscript",
 textVersion =
 paste("Pipper, C. and Ritz, C. (2009)",
 "An asymptotic correction for controlling the overall type I error when testing multiple outcomes",

@@ -5,3 +5,4 @@
 2009-06-23: Data added with help page and examples modified in help page for amtest()
 2009-06-24: New Bonferroni type correction added
 2009-08-31: Correction function simplified, adjusted p-values added, dataset mn6.9 modified, help updated
+2009-10-20: Citation updated to accomodate new R version
