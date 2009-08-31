@@ -1,5 +1,5 @@
 "amtest" <- function(
-modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, display = TRUE)
+modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, display = TRUE, adjp=FALSE)
 {
     vcov. <- match.arg(vcov.)  # only "sandwich" and "model-based" acceptable values
     
@@ -70,18 +70,36 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
 
     ## Calculating asymptotic correction
     asympCorr <- alphacorrected(numModels, sig.level, vcMat)
-    bonCorr <- 1-(1-sig.level)^(1 / numModels)
+    sleCorr <- 1-(1-sig.level)^(1 / numModels)     #Slepian correction
 
     ## Showing the results 
     if (display)
-    {   
+    {  
         numDigits <- 4  # hardcoded at the moment
-        cat(paste("Nominal level:", format(sig.level, digits = numDigits), "\n\n"))
-        cat(paste("Bonferroni-corrected level:", format(bonCorr, digits = numDigits), "\n\n"))    
+        cat(paste("Nominal level:", format(sig.level, digits = numDigits), "\n\n")) 
+        if (!adjp)
+        {
+        cat(paste("Slepian-corrected level:", format(sleCorr, digits = numDigits), "\n\n"))    
         cat(paste("Asymptotically corrected level:", format(asympCorr, digits = numDigits), "\n\n"))
         cat("P-values:\n")
         cat(format(pvals, digits = numDigits))
         cat("\n")
+        } else
+        {
+        slepvals<-1-(1-pvals)^(1/numModels)
+        alphacorrVec <- Vectorize(alphacorrected, "alpha")
+        asymppvals<-alphacorrVec(numModels,pvals,vcMat)
+        cat("Slepian-corrected P-values:\n")
+        cat(format(slepvals, digits = numDigits))
+        cat("\n\n")
+        cat("Asymptotically corrected P-values:\n")
+        cat(format(asymppvals, digits = numDigits))
+        cat("\n\n")
+        warning("Not to be interpreted as ordinary p-values",call.=FALSE)
+        
+        }
+        
     }
-    invisible(list(nominal = sig.level, bonferroni = bonCorr, asymptotic = asympCorr, p.values = pvals))
+    invisible(list(nominal = sig.level, slepian = sleCorr, asymptotic = asympCorr, p.values = pvals,
+                   adj.p.values=ifelse(adjp,asymppvals,rep(NA,numModels))))
 }

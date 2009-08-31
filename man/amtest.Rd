@@ -15,7 +15,7 @@ Testing multiple outcomes
 
 \usage{
   amtest(modelList, varName, vcov. = c("sandwich", "model-based"), 
-         sig.level = 0.05, display = TRUE)
+         sig.level = 0.05, display = TRUE, adjp=FALSE)
 }
 
 \arguments{
@@ -37,6 +37,8 @@ Testing multiple outcomes
 }
   \item{display}{logical indicating whether or not the results should be shown at the command line.
 }
+  \item{adjp}{logical indicating whether or not the correction should be reported in terms of adjusted p-values.
+}
 }
 
 \details{
@@ -44,14 +46,14 @@ Testing multiple outcomes
   error using i.i.d. decompositions of parameter estimates by means of score components. The details are
   provided by Pipper and Ritz (2009).
   
-  The implemented method is less conservative than the Bonferroni correction and it flexibly adapts to the 
+  The implemented method is less conservative than the practically identical Bonferroni/Slepian corrections and it flexibly adapts to the 
   correlation structure between outcomes. Different types of outcome measures such as continuous, binomial, 
   and event times, as well as missing values  in outcome measures and explanatory variables can be handled 
   by the procedure.
 }
 
 \value{
-  The corrected significance level as well as the Bonferroni type correction  
+  The corrected significance level as well as the Slepian correction  
  \eqn{1-(1-Nominal significance level)^(1/Number of tests)} and the marginal
   p-values are shown by default (can be switched off using the argument 'display').
   
@@ -126,4 +128,5 @@ amtest(list(model1,model2),"group2")
 \keyword{htest}
 
 \concept{type I error}
+\concept{Family wise error rate}
 
