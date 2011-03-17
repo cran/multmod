@@ -6,3 +6,5 @@
 2009-06-24: New Bonferroni type correction added
 2009-08-31: Correction function simplified, adjusted p-values added, dataset mn6.9 modified, help updated
 2009-10-20: Citation updated to accomodate new R version
+2011-03-17: amtest() corrected for error in adjusted p-values and output display
+2011-03-17: Help page for amtest() updated

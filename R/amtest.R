@@ -58,7 +58,8 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
     if (identical(vcov., "model-based"))
     {  
         ## Using model-based estimated standard errors
-        vcMat <- varest %*% covar %*% varest
+        varestalt <- diag(1 / sqrt(diag(covar)))
+        vcMat <- varestalt %*% covar %*% varestalt
         zVec <- zVec * diag(varest)
     } else {
         ## Using iid decomposition based standard errors  
@@ -68,9 +69,25 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
     }
     pvals <- 1 - pchisq(zVec * zVec, 1)
 
+ probFct<-function(alphatilde)
+    {
+    
+        atHalf<-alphatilde/2
+        1-pmvnorm(lower=rep(qnorm(atHalf),numModels),upper=rep(qnorm(1-atHalf),numModels),mean=rep(0,numModels),sigma=vcMat)
+    }
+
     ## Calculating asymptotic correction
     asympCorr <- alphacorrected(numModels, sig.level, vcMat)
     sleCorr <- 1-(1-sig.level)^(1 / numModels)     #Slepian correction
+  
+    ##Calculating adjusted p-values
+    if (adjp){
+     slepvals<-1-(1-pvals)^(numModels)
+     alphacorrVec <- Vectorize(probFct, "alphatilde")
+     asymppvals<-alphacorrVec(pvals)
+
+    }
+       
 
     ## Showing the results 
     if (display)
@@ -84,11 +101,8 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
         cat("P-values:\n")
         cat(format(pvals, digits = numDigits))
         cat("\n")
-        } else
-        {
-        slepvals<-1-(1-pvals)^(1/numModels)
-        alphacorrVec <- Vectorize(alphacorrected, "alpha")
-        asymppvals<-alphacorrVec(numModels,pvals,vcMat)
+        }
+        if(adjp){
         cat("Slepian-corrected P-values:\n")
         cat(format(slepvals, digits = numDigits))
         cat("\n\n")
@@ -100,6 +114,21 @@ modelList, varName, vcov. = c("sandwich", "model-based"), sig.level = 0.05, disp
         }
         
     }
-    invisible(list(nominal = sig.level, slepian = sleCorr, asymptotic = asympCorr, p.values = pvals,
-                   adj.p.values=ifelse(adjp,asymppvals,rep(NA,numModels))))
+
+    if (adjp) 
+
+    {
+         return(invisible(list(nominal = sig.level, slepian = sleCorr, asymptotic = asympCorr, p.values = pvals,
+                   asympadj.pvalues = asymppvals, slepianadj.pvalues = slepvals)))
+ 
+    }
+
+
+    if (!adjp) 
+
+    {
+         return(invisible(list(nominal = sig.level, slepian = sleCorr, asymptotic = asympCorr, p.values = pvals)))
+ 
+    }
+
 }

@@ -2,12 +2,12 @@ citHeader("To cite the package 'multmod' in publications use:")
 
 citEntry(
 entry="Unpublished",
-title = "An asymptotic correction for controlling the overall type I error when testing multiple outcomes",
+title = "A versatile method for confirmatory evaluation of the effects of a covariate in multiple models",
 author = personList(as.person("C. B. Pipper"), as.person("C. Ritz")),
-year = 2009,
+year = 2011,
 note = "Submitted manuscript",
 textVersion =
-paste("Pipper, C. and Ritz, C. (2009)",
-"An asymptotic correction for controlling the overall type I error when testing multiple outcomes",
+paste("Pipper, C. and Ritz, C. (2011)",
+"A versatile method for confirmatory evaluation of the effects of a covariate in multiple models",
 "Submitted manuscript")
 )

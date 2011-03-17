@@ -44,7 +44,7 @@ Testing multiple outcomes
 \details{
   The function calculates a corrected overall significance level that asymptotically reaches the desired type I
   error using i.i.d. decompositions of parameter estimates by means of score components. The details are
-  provided by Pipper and Ritz (2009).
+  provided by Pipper and Ritz (2011).
   
   The implemented method is less conservative than the practically identical Bonferroni/Slepian corrections and it flexibly adapts to the 
   correlation structure between outcomes. Different types of outcome measures such as continuous, binomial, 
@@ -60,9 +60,9 @@ Testing multiple outcomes
   These values are also returned invisibly in a list.
 }
 
-\references{
-  Pipper, C. B. and Ritz, C (2009)
-  An asymptotic correction for controlling the overall type I error when testing multiple outcomes,
+\references{A versatile method for confirmatory evaluation of the effects of a covariate in multiple models,
+  Pipper, C. B. and Ritz, C (2011)
+  
   \emph{Submitted manuscript}
 }
 
