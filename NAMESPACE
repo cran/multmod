@@ -1,5 +1,8 @@
+useDynLib(multmod)
+
 ## functions
 export(amtest)
+export(amtest.efron)
 
 
 ## S3 methods

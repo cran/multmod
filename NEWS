@@ -8,3 +8,4 @@
 2009-10-20: Citation updated to accomodate new R version
 2011-03-17: amtest() corrected for error in adjusted p-values and output display
 2011-03-17: Help page for amtest() updated
+2011-10-05: Function amtest.efron() included

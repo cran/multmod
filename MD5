@@ -1,0 +1,17 @@
+4a43b657052ed64484d8cb94f71b4021 *DESCRIPTION
+b4fccac6d98d6c4698bbc245702bfa75 *NAMESPACE
+bed08459beaf325eac0c84c67614b0f7 *NEWS
+8068fb260057dde9fe85388c010f1612 *R/alphacorrected.R
+e1e6b36b8e2d68c9d11db0fc0ab7403f *R/amtest.R
+cce8d09af74713aff52b4ee0b78cea43 *R/amtest.efron.R
+789f8e59110f9fc5a0c0daf59fa16512 *R/efron.R
+d55b265f53a2b08a6b9d30bdb058d468 *R/zvecfun.R
+6b52f30ac493eec8d207b1ea987b9d59 *data/mn6.9.rda
+5063f18e09abac7becc8cd2700c13ca7 *inst/CITATION
+f8ea440768640374236bf04cdace3467 *inst/LICENCE
+6dc772ae7e63fe99729d1ac358a001b1 *man/amtest.Rd
+59ecc2b836344c5db150ac0b84b9c2a2 *man/amtest.efron.Rd
+1ae4f032a02e156c6307f506675da1ab *man/mn6.9.Rd
+b3f86c20b81b51f5162874977d38784d *src/Makevars
+c8e35a7d7a206bf196cf4f391739684f *src/Makevars.win
+1c341605e4f8f8187f5b792d63172a77 *src/multmod.cpp
