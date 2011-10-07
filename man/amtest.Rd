@@ -60,10 +60,12 @@ Testing multiple outcomes
   These values are also returned invisibly in a list.
 }
 
-\references{A versatile method for confirmatory evaluation of the effects of a covariate in multiple models,
-  Pipper, C. B. and Ritz, C (2011)
-  
-  \emph{Submitted manuscript}
+\references{
+
+Pipper, C. B., Ritz, C., Bisgaard, H. (2011).
+A versatile method for confirmatory evaluation of the effects of a covariate in multiple models.
+\emph{To appear in JRSSC.}
+
 }
 
 \author{

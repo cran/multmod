@@ -289,7 +289,7 @@ ycorlist(0)=maxVal;
 // sÂ den fundne vÊrdi ikke vil blive brugt igen
 
 int pos [2];
-pos[0] = floor((maxPos)/xnummod);
+pos[0] = maxPos/xnummod;
 pos[1] =(maxPos % xnummod);
 
 ycorvec(pos[0]*xnummod+pos[1])=-10;
@@ -318,7 +318,7 @@ ycorlist(k)=maxVal;
 
 int pos2 [2];
 
-pos2[0] = floor((maxPos)/xnummod);
+pos2[0] = maxPos/xnummod;
 pos2[1] =(maxPos % xnummod);
 
 ycorvec(pos2[0]*xnummod+pos2[1])=-10;

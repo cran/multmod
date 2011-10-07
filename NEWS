@@ -9,3 +9,6 @@
 2011-03-17: amtest() corrected for error in adjusted p-values and output display
 2011-03-17: Help page for amtest() updated
 2011-10-05: Function amtest.efron() included
+2011-10-06: Bug fix in multmod.cpp thanks to Brian Ripley
+2011-10-06: amtest.Rd updated
+2011-10-07: Fixing input/output in amtest.efron()

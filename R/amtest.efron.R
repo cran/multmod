@@ -1,10 +1,10 @@
 
 
 "amtest.efron"<-
-function (modelList, varName, vcov. = c("sandwich", "model-based"), 
+function (modelList, varName, 
     sig.level = 0.05, display = TRUE) 
 {
-    vcov. <- match.arg(vcov.)
+    vcov. <- "sandwich"
     require(gtools, quietly = TRUE)
     require(mvtnorm, quietly = TRUE)
     require(sandwich, quietly = TRUE)
@@ -63,6 +63,7 @@ function (modelList, varName, vcov. = c("sandwich", "model-based"),
             cat("\n\n")
             cat("P-values:\n")
             cat(format(pvals, digits = numDigits))
+		    cat("\n\n")
                 
     }
 	return(invisible(list(nominal = sig.level, slepian = sleCorr, 

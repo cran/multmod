@@ -13,8 +13,7 @@ Adjusted p-values for multiple tests
 }
 
 \usage{
-  amtest.efron(modelList, varName, vcov. = c("sandwich", "model-based"), 
-         sig.level = 0.05, display = TRUE)
+  amtest.efron(modelList, varName, sig.level = 0.05, display = TRUE)
 }
 
 \arguments{
@@ -26,11 +25,6 @@ Adjusted p-values for multiple tests
 }
   \item{varName}{string specifying the name of the explanatory variable for which the effect is to be assessed. 
 }
-  \item{vcov.}{
-  string specifying the type of estimated variance-covariance matrix to use for calculating the
-  test statistics. Two options are available model-based estimated standard errors or robust estimated sandwich
-  standard errors, which is the default.
-} 
   \item{sig.level}{
   numeric specifying the nominal significance level or type I error rate (default is 0.05).
 }
