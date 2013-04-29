@@ -12,3 +12,4 @@
 2011-10-06: Bug fix in multmod.cpp thanks to Brian Ripley
 2011-10-06: amtest.Rd updated
 2011-10-07: Fixing input/output in amtest.efron()
+2013-30-04: Citation fix

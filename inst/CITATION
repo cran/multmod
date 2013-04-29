@@ -1,14 +1,15 @@
 citHeader("To cite the package 'multmod' in publications use:")
 
 citEntry(
-entry="Unpublished",
+entry="Article",
 title = "A versatile method for confirmatory evaluation of the effects of a covariate in multiple models",
 author = personList(as.person("C. B. Pipper"), as.person("C. Ritz"), as.person("H. Bisgaard")),
-year = 2011,
-journal=JRSSC,
-note = "In press",
+year = 2012,
+journal = "Journal of the Royal Statistical Society: Series C (Applied Statistics)",
+volume = 61,
+pages = 315-326,
 textVersion =
-paste("Pipper, C., Ritz, C., Bisgaard, H. (2011)",
-"A versatile method for confirmatory evaluation of the effects of a covariate in multiple models","JRSSC",
-"In press")
+paste("Pipper, C., Ritz, C., Bisgaard, H. (2012)",
+"A versatile method for confirmatory evaluation of the effects of a covariate in multiple models","Journal of the Royal Statistical Society: Series C (Applied Statistics)",
+"61, 315-326")
 )
